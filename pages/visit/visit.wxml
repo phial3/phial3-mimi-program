@@ -1,0 +1,92 @@
+<!--pages/visit/visit.wxml-->
+<!-- <text>pages/visit/visit.wxml</text> -->
+
+
+<form catchsubmit="confirmPublish">
+    <view class="cu-form-group margin-top">
+        <view class="title d-flex">
+            姓名
+        </view>
+        <view class="w-100 h-100 borderBottom flex-1 d-flex jc-start ai-center" style="height:100rpx;">
+            <input maxlength="15" placeholder="请输入姓名" value="{{name}}" data-name="name" bindblur="setInput"></input>
+        </view>
+    </view>
+    <view class="cu-form-group margin-top">
+        <view class="title d-flex">性别
+        </view>
+        <picker class="w-100 h-100 borderBottom flex-1 d-flex jc-start ai-center" style="height:100rpx;font-size: 30rpx;color: #555;" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+            <view class="picker">
+                {{array[sex]}}
+            </view>
+        </picker>
+    </view>
+    <view class="cu-form-group margin-top">
+        <view class="title d-flex">
+            手机号
+        </view>
+        <view class="w-100 h-100 borderBottom flex-1 d-flex jc-start ai-center" style="height:100rpx;">
+            <input maxlength="15" placeholder="请输入姓名" value="{{phone}}" data-name="phone" bindblur="setInput"></input>
+        </view>
+    </view>
+    <view class="cu-form-group margin-top">
+        <view class="title d-flex">
+            证件号
+        </view>
+        <view class="w-100 h-100 borderBottom flex-1 d-flex jc-start ai-center" style="height:100rpx;">
+            <input maxlength="15" placeholder="请输入姓名" value="{{idNumber}}" data-name="idNumber" bindblur="setInput"></input>
+        </view>
+    </view>
+    <view class="cu-form-group margin-top">
+        <view class="title d-flex">日期选择器</view>
+
+        <view class="picker" class="w-100 h-100 borderBottom flex-1 d-flex jc-start ai-center" style="height:100rpx;font-size: 30rpx;color: #555;" bind:tap="openPicker">
+            {{currentChoose}}
+        </view>
+
+    </view>
+
+
+    <van-action-sheet show="{{ show }}" bind:close="onClose" bind:getuserinfo="onGetUserInfo">
+        <van-datetime-picker type="datetime" value="{{ currentDate }}" min-date="{{ minDate }}" max-date="{{ maxDate }}" bind:cancel="onCancel" bind:confirm="onConfirm" bind:change="onChange" />
+    </van-action-sheet>
+
+
+    <view class="cu-form-group margin-top">
+        <view class="title d-flex">来访事由
+        </view>
+        <picker class="w-100 h-100 borderBottom flex-1 d-flex jc-start ai-center" style="height:100rpx;font-size: 30rpx;color: #555;" bindchange="bindPickerChangeCause" value="{{index1}}" range="{{visitCausearray}}">
+            <view class="picker">
+                {{visitCausearray[visitCause]}}
+            </view>
+        </picker>
+    </view>
+    <view class="cu-form-group margin-top">
+        <view class="title d-flex">
+            来访公司
+        </view>
+        <view class="w-100 h-100 borderBottom flex-1 d-flex jc-start ai-center" style="height:100rpx;">
+            <input maxlength="15" placeholder="请输入姓名" value="{{visitCompany}}" data-name="visitCompany" bindblur="setInput"></input>
+        </view>
+    </view>
+    <view class="cu-form-group margin-top">
+        <view class="title d-flex">
+            被访姓名
+        </view>
+        <view class="w-100 h-100 borderBottom flex-1 d-flex jc-start ai-center" style="height:100rpx;">
+            <input maxlength="15" placeholder="请输入姓名" value="{{interviewee}}" data-name="interviewee" bindblur="setInput"></input>
+        </view>
+    </view>
+
+    <view class="cu-form-group margin-top">
+        <view class="title d-flex">被访部门
+        </view>
+        <picker class="w-100 h-100 borderBottom flex-1 d-flex jc-start ai-center" style="height:100rpx;font-size: 30rpx;color: #555;" bindchange="bindPickerOrgan" value="{{index2}}" range="{{organarray}}">
+            <view class="picker">
+                {{organarray[visitOrganId]}}
+            </view>
+        </picker>
+    </view>
+
+    <button class='btn1' bindtap="bindViewTapsuccess" form-type="submit">完成</button>
+
+</form>

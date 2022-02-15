@@ -1,0 +1,64 @@
+<!--pages/contact/contact.wxml-->
+<view class="title">
+    <view style="">IOT产品部-物联产品方案研发组</view>
+    <text style="color: rgb(9, 69, 235);">工时统计系统</text>
+</view>
+
+<view class="container">
+
+    <!-- 用户名事件绑定 -->
+    <view class="fl_form">
+        <text>您的姓名</text>
+        <input type="text" placeholder='请输入您的姓名' value="{{userName}}" bindblur='userNameInput'></input>
+    </view>
+
+    <!-- 所属部门事件绑定 -->
+    <view class="fl_form">
+        <text>所属部门</text>
+        <input type="text" placeholder='请输入所属部门' value="{{userBranch}}" bindblur='userBranchInput'></input>
+    </view>
+
+    <!-- 联系电话事件绑定 -->
+    <view class="fl_form">
+        <text>联系电话</text>
+        <input type="text" placeholder='请输入联系电话' value="{{userPhone}}" bindblur='userPhoneInput'></input>
+    </view>
+
+
+    <!-- 项目名称事件绑定 -->
+    <view class="fl_form">
+        <text>项目名称</text>
+        <input type="text" placeholder='请输入项目名称' value="{{projectName}}" bindblur='projectNameInput'></input>
+    </view>
+
+
+
+    <!-- 时间选择器 mode="time" -->
+    <view class="fl_form newtime">
+        <!-- 日期选择器 mode="date" -->
+        <view class="fl_form">
+            <picker mode="date" value="{{currentDate}}" start="2020-01-01" end="{{currentDate}}" bindchange="bindDateChange">
+                <view class="picker">
+                    <text>打卡日期: </text> <text class="chosedate">{{currentDate}}</text>
+                </view>
+            </picker>
+        </view>
+
+        <picker mode="time" value="{{startTime}}" start="09:00" end="21:00" bindchange="startTimeSelect">
+            <view class="picker">
+                <text>开始时间: </text> <text class="chosedate">{{startTime}}</text>
+            </view>
+        </picker>
+
+        <picker mode="time" value="{{endTime}}" start="09:00" end="21:00" bindchange="endTimeSelect">
+            <view class="picker end">
+                <text>结束时间: </text> <text class="chosedate">{{endTime}}</text>
+            </view>
+        </picker>
+    </view>
+
+
+    <!-- 提交按钮 -->
+    <button class="formbtn" bindtap='formSubmit'>提交</button>
+
+</view>

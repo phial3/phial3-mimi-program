@@ -1,0 +1,21 @@
+{
+    "pages": [
+        "pages/appointment/appointment",
+        "pages/visit/visit",
+        "pages/selector/selector",
+
+        "pages/index/index",
+        "pages/lucky-turntable/lucky-turntable",
+        "pages/blessing/blessing",
+        "pages/contact/contact"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#D8322E",
+        "navigationBarTitleText": "京鱼座",
+        "navigationBarTextStyle": "white"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json",
+    "lazyCodeLoading": "requiredComponents"
+}

@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<view class="main">
+  <!-- 背景色 -->
+  <view class="bg-color"></view>
+  <!-- 背景图 -->
+  <image src="/images/bg_image_1.png" class="bg-image" />
+  <view class="avatar">
+    <!-- 头像框 -->
+    <image src="/images/avatar_border.png" class="avatar__img-border" />
+    <!-- 头像 -->
+    <image src="/images/avatar.png" class="avatar__img" />
+  </view>
+  <view class="tip">
+    <view class="tip__name">小微</view>
+    <view class="tip__content">邀请你语言聊天</view>
+  </view>
+  <view class="options">
+    <view class="options__gd" bindtap="handleRefuse">
+      <view class="options__icon">
+        <image src="/images/gd.png" class="options__gd-img" />
+      </view>
+      <view class="options__text">拒绝</view>
+    </view>
+    <view class="options__jt" bindtap="handleAnswer">
+      <view class="options__icon">
+        <image src="/images/jt.png" class="options__jt-img" />
+      </view>
+      <view class="options__text">接听</view>
+    </view>
+  </view>
+</view>

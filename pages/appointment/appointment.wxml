@@ -1,0 +1,44 @@
+<!--pages/appointment/appointment.wxml-->
+<!-- <text>pages/appointment/appointment.wxml</text> -->
+
+<view class="appointment_container">
+    <view class="appointment_box">
+        <view class="appointment_title">
+            <view class="appointment_logo">
+                <image src="/images/icon-popup.png" alt=""></image>
+                <span>京鱼座智能生活馆</span>
+            </view>
+        </view>
+
+        <view class="appointment_information">
+
+            <input class="name" type="text" value="{{ userName }}" placeholder="姓名" bindblur='userNameInput'></input>
+
+            <input class="phone" type="number" value="{{ userPhone }}" placeholder="手机号" bindblur='userPhoneInput'></input>
+
+            <select name="s_province">
+                <picker mode="selector" bindchange="selectProvince" value="{{ index }}" range="{{ provinceList }}" range-key='name'>
+                    <view wx:if="{{ index < 0}}">-请选择省-</view>
+                    <view wx:else>{{ provinceList[index].name }}</view>
+                </picker>
+            </select>
+
+            <select name="s_city">
+                <picker mode="selector" bindchange="selectCity" value="{{ cityIndex }}" range="{{ cityList }}" range-key='name'>
+                    <view wx:if="{{ cityIndex < 0}}">-请选择市区-</view>
+                    <view wx:else>{{ cityList[cityIndex].name }}</view>
+                </picker>
+            </select>
+
+            <select name="s_store" placeholder="请选择门店">
+                <picker mode="selector" bindchange="selectStore" value="{{ stroeIndex }}" range="{{ storeList }}" range-key='name'>
+                    <view wx:if="{{ storeIndex < 0}}">-请选择门店-</view>
+                    <view wx:else>{{ storeList[storeIndex].name }}</view>
+                </picker>
+            </select>
+
+            <button class="btn" bindtap="onSubmit">提交</button>
+
+        </view>
+    </view>
+</view>

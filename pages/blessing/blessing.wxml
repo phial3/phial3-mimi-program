@@ -1,0 +1,4 @@
+<canvas type="2d" id="posterCanvas" bindlongtap="exportPoster" style="width:{{canvasWidth +'px'}}; height:{{canvasHeight +'px'}}"></canvas>
+
+
+<!-- <button type="button" bindtap="confirmBless">收下祝福</button > -->

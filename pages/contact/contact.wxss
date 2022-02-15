@@ -1,0 +1,17 @@
+/* pages/contact/contact.wxss */
+
+page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom:-50px;
+  font-size: 50rpx;
+  color: rgba(15, 3, 36, 0.959);
+}
+
